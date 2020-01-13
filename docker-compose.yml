@@ -1,0 +1,19 @@
+version: '3'
+services: 
+  web:
+    build: 
+      context: ./web/.
+    ports: 
+      - "7000:80"
+    networks: 
+      - work
+  api:
+    build: 
+      context: ./api/.
+    ports: 
+      - "7001:7001"
+    networks:
+      - work
+networks:
+  work:
+    driver: bridge
